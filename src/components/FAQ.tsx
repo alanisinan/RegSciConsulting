@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const faqs = [
   { q: 'What is important when a food or supplement company is looking for outside consulting expertise?', a: 'Finding a partner with deep regional knowledge of the GCC (UAE, Saudi Arabia, Oman, etc.) and specific technical experience in your product category.' },
@@ -21,7 +22,12 @@ export default function FAQ() {
         
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'flex-start' }}>
           
-          <div style={{ flex: '1 1 350px', position: 'sticky', top: '120px' }}>
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            style={{ flex: '1 1 350px', position: 'sticky', top: '120px' }}>
              <h4 style={{ color: 'var(--primary-blue)', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.85rem', marginBottom: '1rem', fontWeight: 700 }}>Got Questions?</h4>
              <h2 style={{ fontSize: '3rem', color: 'var(--primary-blue-dark)', marginBottom: '1.5rem', fontFamily: 'var(--font-serif)', lineHeight: 1.1 }}>
                Frequently Asked Questions
@@ -36,16 +42,22 @@ export default function FAQ() {
              }}>
                Ask a Custom Question
              </a>
-          </div>
+          </motion.div>
 
           <div style={{ flex: '2 1 500px', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {faqs.map((faq, i) => {
               const isOpen = openIdx === i;
               return (
-                <div key={i} style={{ 
-                  background: '#fff', 
-                  borderRadius: '16px', 
-                  boxShadow: isOpen ? 'var(--shadow-md)' : 'var(--shadow-sm)', 
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ delay: Math.min(i * 0.04, 0.3), duration: 0.4 }}
+                  style={{
+                  background: '#fff',
+                  borderRadius: '16px',
+                  boxShadow: isOpen ? 'var(--shadow-md)' : 'var(--shadow-sm)',
                   border: isOpen ? '1px solid var(--primary-blue)' : '1px solid transparent',
                   overflow: 'hidden',
                   transition: 'all 0.3s ease'
@@ -82,7 +94,7 @@ export default function FAQ() {
                       {faq.a}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

@@ -1,15 +1,22 @@
 'use client';
+import { motion } from 'framer-motion';
+
 export default function ContactForm() {
   return (
     <section id="contact" style={{ padding: '8rem 0', background: 'var(--bg-cyan-light)', position: 'relative' }}>
       <div className="container" style={{ maxWidth: '800px', position: 'relative', zIndex: 10 }}>
-        
+
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <h2 style={{ fontSize: '3.5rem', color: 'var(--primary-blue-dark)', lineHeight: 1.1, marginBottom: '1.5rem', fontFamily: 'var(--font-serif)' }}>Ready to overcome your regulatory hurdles?</h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>Speak with our senior scientists and regulatory experts to build your compliance roadmap today.</p>
         </div>
-        
-        <div style={{ background: '#fff', borderRadius: '24px', padding: '4rem', boxShadow: 'var(--shadow-lg)' }}>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          style={{ background: '#fff', borderRadius: '24px', padding: '4rem', boxShadow: 'var(--shadow-lg)' }}>
           <form onSubmit={(e) => e.preventDefault()} style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
@@ -56,7 +63,7 @@ export default function ContactForm() {
               Your data is strictly confidential. We never share your information.
             </p>
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

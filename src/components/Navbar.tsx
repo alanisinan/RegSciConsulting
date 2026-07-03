@@ -16,10 +16,10 @@ export default function Navbar() {
             </span>
           </div>
         </Link>
-        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-          <Link href="#services" style={{ color: 'var(--text-dark)', fontWeight: 500, fontSize: '0.9rem' }}>Services</Link>
-          <Link href="#gap-analysis" style={{ color: 'var(--text-dark)', fontWeight: 500, fontSize: '0.9rem' }}>Gap Analysis</Link>
-          <Link href="#faq" style={{ color: 'var(--text-dark)', fontWeight: 500, fontSize: '0.9rem' }}>FAQ</Link>
+        <div style={{ display: 'flex', gap: '2.25rem', alignItems: 'center' }}>
+          <Link href="#services" className="nav-link">Services</Link>
+          <Link href="#gap-analysis" className="nav-link">Gap Analysis</Link>
+          <Link href="#faq" className="nav-link">FAQ</Link>
           <Link href="#contact" className="btn btn-yellow" style={{ padding: '0.5rem 1.25rem', fontSize: '0.9rem' }}>
             Contact Us
           </Link>

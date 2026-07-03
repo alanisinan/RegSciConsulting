@@ -32,25 +32,33 @@ export default function CoreServices() {
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
           {services.map((srv, i) => (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.05, duration: 0.4 }}
-              key={i} 
-              style={{ 
-              background: 'rgba(255, 255, 255, 0.03)', 
-              padding: '1.5rem', 
-              borderRadius: '8px', 
+              key={i}
+              style={{
+              background: 'rgba(255, 255, 255, 0.03)',
+              padding: '1.5rem',
+              borderRadius: '8px',
               border: '1px solid rgba(255,255,255,0.1)',
-              transition: 'background 0.2s',
+              transition: 'background 0.2s, transform 0.2s, box-shadow 0.2s',
               cursor: 'default'
             }}
-            onMouseEnter={(e: any) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)'}
-            onMouseLeave={(e: any) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)'}
+            onMouseEnter={(e: any) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
+              e.currentTarget.style.transform = 'translateY(-3px)';
+              e.currentTarget.style.boxShadow = '0 12px 24px -8px rgba(0,0,0,0.35)';
+            }}
+            onMouseLeave={(e: any) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
             >
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                <div style={{ color: 'var(--accent-yellow)', fontSize: '1.25rem', marginTop: '-2px' }}>✦</div>
+                <div style={{ color: 'var(--accent-yellow)', fontSize: '0.85rem', fontFamily: 'var(--font-sans)', fontWeight: 700, marginTop: '2px' }}>{(i + 1).toString().padStart(2, '0')}</div>
                 <div>
                   <h3 style={{ fontSize: '1.1rem', color: '#fff', fontFamily: 'var(--font-sans)', fontWeight: 600, marginBottom: '0.5rem' }}>{srv.title}</h3>
                   <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, margin: 0 }}>

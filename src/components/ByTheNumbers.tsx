@@ -29,26 +29,28 @@ function AnimatedCounter({ value, suffix = '' }: { value: number, suffix?: strin
 }
 
 export default function ByTheNumbers() {
+  const stats = [
+    { value: 14, suffix: '+', label: 'GCC Markets' },
+    { value: 100, suffix: '+', label: 'Dossiers Submitted' },
+    { value: 15, suffix: '+', label: 'Years Experience' },
+    { value: 0, suffix: '', label: 'Regulatory Rejections' },
+  ];
+
   return (
-    <section className="bg-blue" style={{ padding: '4rem 0', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+    <section style={{
+      padding: '4rem 0',
+      borderTop: '1px solid rgba(255,255,255,0.1)',
+      background: 'linear-gradient(180deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%)'
+    }}>
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
-          <div>
-            <AnimatedCounter value={14} suffix="+" />
-            <div style={{ color: '#fff', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '0.5rem' }}>GCC Markets</div>
-          </div>
-          <div>
-            <AnimatedCounter value={100} suffix="+" />
-            <div style={{ color: '#fff', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '0.5rem' }}>Dossiers Submitted</div>
-          </div>
-          <div>
-            <AnimatedCounter value={15} suffix="+" />
-            <div style={{ color: '#fff', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '0.5rem' }}>Years Experience</div>
-          </div>
-          <div>
-            <AnimatedCounter value={0} />
-            <div style={{ color: '#fff', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '0.5rem' }}>Regulatory Rejections</div>
-          </div>
+          {stats.map((stat) => (
+            <div key={stat.label}>
+              <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+              <div style={{ width: '32px', height: '3px', borderRadius: '2px', background: 'var(--accent-yellow)', margin: '0.9rem auto 0.7rem', opacity: 0.8 }} />
+              <div style={{ color: '#fff', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
