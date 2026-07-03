@@ -6,9 +6,8 @@ export default function Navbar() {
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--primary-blue)', fontWeight: 700, fontSize: '1.5rem', fontFamily: 'var(--font-sans)', textDecoration: 'none' }}>
           <img src="/logo.png" alt="RegSci Consulting Logo" style={{ height: '72px', objectFit: 'contain' }} />
-          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
-            <span style={{ fontSize: '1.5rem', fontWeight: 800 }}>RegSci</span>
-            <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '1px', color: 'var(--text-muted)' }}>CONSULTING</span>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: '220px' }}>
+            <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)', lineHeight: 1.3 }}>Regulatory and scientific affairs consulting company</span>
           </div>
         </Link>
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
