@@ -1,26 +1,70 @@
+'use client';
 export default function GapTimeline() {
   const steps = [
-    { step: 'Step 1', title: 'Identify the gaps', desc: 'Staff cannot keep up with new GCC regulations, scientific questions or dossier reviews.' },
-    { step: 'Step 2', title: 'Evaluate business impact and risks', desc: 'Launch delay, compliance issues, reputation damage, customer expectations.' },
-    { step: 'Step 3', title: 'Assess internal capabilities', desc: 'Look at existing deadlines, technical coverage, regional Middle East knowledge.' },
-    { step: 'Step 4', title: 'Estimate cost of delay', desc: 'Cost of rework or compliance exposure vs. cost of consulting support.' },
-    { step: 'Step 5', title: 'Scope needs based on success parameters', desc: 'Plan for defensible claims, audit-ready documentation, deadlines achieved.' },
+    { 
+      title: 'Concept & Feasibility', 
+      desc: 'We analyze your product formula and claims against strict GCC standards before you invest heavily in production.' 
+    },
+    { 
+      title: 'Scientific Gap Analysis', 
+      desc: 'Identifying non-compliant ingredients, novel food classifications, and missing clinical evidence for FSMP.' 
+    },
+    { 
+      title: 'Dossier Compilation', 
+      desc: 'Building robust, submission-ready technical files and specifications tailored for UAE, KSA, and regional authorities.' 
+    },
+    { 
+      title: 'Regulatory Submission', 
+      desc: 'Navigating the complex, multi-layered registration processes directly with local health ministries.' 
+    },
+    { 
+      title: 'Market Access & Beyond', 
+      desc: 'Securing your product\'s legal status and providing ongoing surveillance to ensure continuous post-market compliance.' 
+    },
   ];
 
   return (
-    <section id="gap-analysis" style={{ padding: '6rem 0', background: '#fff' }}>
-      <div className="container" style={{ background: '#00509E', borderRadius: '16px', padding: '4rem' }}>
-        <h2 style={{ fontSize: '2.5rem', color: '#fff', marginBottom: '4rem' }}>Evaluate Your Food & Supplement Expertise Gap</h2>
+    <section id="gap-analysis" style={{ padding: '8rem 0', background: 'var(--bg-cyan-light)' }}>
+      <div className="container">
+        <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+          <h2 style={{ fontSize: '3rem', color: 'var(--primary-blue-dark)', marginBottom: '1.5rem', maxWidth: '800px', margin: '0 auto 1.5rem auto' }}>
+            The Path to GCC Market Access
+          </h2>
+          <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
+            A structured, risk-mitigated approach to bringing your food and supplement products to the Middle East quickly and compliantly.
+          </p>
+        </div>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '1rem', position: 'relative' }}>
-          <div style={{ position: 'absolute', top: '10px', left: '10%', right: '10%', height: '4px', background: 'var(--bg-cyan)' }}></div>
-          
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', alignItems: 'start' }}>
           {steps.map((s, i) => (
-            <div key={i} style={{ position: 'relative', zIndex: 1 }}>
-              <div style={{ width: 24, height: 24, borderRadius: '50%', background: 'var(--accent-yellow)', border: '4px solid var(--bg-cyan)', margin: '0 auto 1.5rem auto' }}></div>
-              <div style={{ color: 'var(--accent-yellow)', fontWeight: 700, fontFamily: 'var(--font-sans)', marginBottom: '1rem', fontSize: '1.1rem' }}>{s.step}</div>
-              <h4 style={{ color: '#fff', fontSize: '1rem', fontFamily: 'var(--font-sans)', fontWeight: 600, marginBottom: '1rem' }}>{s.title}</h4>
-              <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.85rem', lineHeight: 1.4 }}>{s.desc}</p>
+            <div key={i} style={{ 
+              background: '#fff', 
+              borderRadius: '16px', 
+              padding: '2rem', 
+              boxShadow: 'var(--shadow-md)',
+              position: 'relative',
+              borderTop: '6px solid var(--accent-yellow)',
+              marginTop: i % 2 !== 0 ? '3rem' : '0',
+              transition: 'transform 0.3s ease'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+            >
+              <div style={{ 
+                width: '40px', height: '40px', 
+                background: 'var(--primary-blue)', color: '#fff', 
+                borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontWeight: 'bold', fontSize: '1.25rem', marginBottom: '1.5rem',
+                fontFamily: 'var(--font-serif)'
+              }}>
+                {i + 1}
+              </div>
+              <h4 style={{ color: 'var(--primary-blue-dark)', fontSize: '1.1rem', fontFamily: 'var(--font-sans)', fontWeight: 700, marginBottom: '1rem' }}>
+                {s.title}
+              </h4>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                {s.desc}
+              </p>
             </div>
           ))}
         </div>
