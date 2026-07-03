@@ -1,3 +1,5 @@
+@import './animations.css';
+
 :root {
   --bg-color: #050a15;
   --bg-gradient: linear-gradient(135deg, #050a15 0%, #0a1128 100%);

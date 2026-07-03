@@ -6,11 +6,14 @@ export default function Footer() {
       <div className="container">
         <div className="grid grid-cols-1 grid-cols-md-2" style={{ marginBottom: '3rem' }}>
           <div>
-            <h3 style={{ marginBottom: '1rem' }}>RegSci Consulting</h3>
+            <h3 style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div style={{ width: 24, height: 24, background: 'var(--accent-color)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              RegSci Consulting
+            </h3>
             <p style={{ maxWidth: '400px' }}>
               Regulatory and Technical Consultancy for Food Supplements, FSMP, and FSDU across the GCC and Middle East.
-              <br /><br />
-              <span style={{ fontSize: '1.2rem', color: 'var(--text-primary)' }}>مختصر</span>
             </p>
           </div>
           <div style={{ display: 'flex', gap: '4rem', flexWrap: 'wrap' }}>
