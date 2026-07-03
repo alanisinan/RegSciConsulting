@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${merriweather.variable}`}>
+      <body className={`${inter.variable} ${merriweather.variable}`} suppressHydrationWarning>
         <Navbar />
         <main style={{ paddingTop: '70px' }}>{children}</main>
         <Footer />
