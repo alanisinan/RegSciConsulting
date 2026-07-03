@@ -5,10 +5,6 @@ export default function Hero() {
     <section className="bg-blue wave-bg" style={{ padding: '8rem 0', position: 'relative', overflow: 'hidden', textAlign: 'center' }}>
       <div className="container" style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         
-        <div style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1.5rem', color: 'rgba(255,255,255,0.8)', fontWeight: 600 }}>
-          Home &gt; Consulting
-        </div>
-        
         <h1 style={{ fontSize: '4rem', lineHeight: 1.1, marginBottom: '1.5rem', maxWidth: '900px' }}>
           Consulting for the Food, Beverage & Supplement Industries
         </h1>
