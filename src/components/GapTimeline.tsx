@@ -1,4 +1,6 @@
 'use client';
+import { motion } from 'framer-motion';
+
 export default function GapTimeline() {
   const steps = [
     { 
@@ -37,7 +39,13 @@ export default function GapTimeline() {
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', alignItems: 'start' }}>
           {steps.map((s, i) => (
-            <div key={i} style={{ 
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              key={i} 
+              style={{ 
               background: '#fff', 
               borderRadius: '16px', 
               padding: '2rem', 
@@ -47,8 +55,8 @@ export default function GapTimeline() {
               marginTop: i % 2 !== 0 ? '3rem' : '0',
               transition: 'transform 0.3s ease'
             }}
-            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+            onMouseEnter={(e: any) => e.currentTarget.style.transform = 'translateY(-5px)'}
+            onMouseLeave={(e: any) => e.currentTarget.style.transform = 'translateY(0)'}
             >
               <div style={{ 
                 width: '40px', height: '40px', 
@@ -65,7 +73,7 @@ export default function GapTimeline() {
               <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.6 }}>
                 {s.desc}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

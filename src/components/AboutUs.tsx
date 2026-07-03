@@ -6,9 +6,10 @@ export default function AboutUs() {
           
           <div>
             <h4 style={{ color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', fontSize: '0.85rem', marginBottom: '1rem' }}>About Us</h4>
-            <h2 style={{ fontSize: '3rem', color: 'var(--primary-blue-dark)', marginBottom: '1.5rem', lineHeight: 1.2 }}>
+            <h2 style={{ fontSize: '3rem', color: 'var(--primary-blue-dark)', marginBottom: '2rem', lineHeight: 1.2, fontFamily: 'var(--font-serif)' }}>
               Bridging global innovation with Middle East compliance.
             </h2>
+            <img src="/compliance-graphic.png" alt="Scientific Regulatory Compliance" style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: '12px', marginBottom: '2rem', boxShadow: 'var(--shadow-sm)' }} />
             <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
               RegSci Consulting was founded by specialized scientists and regulatory experts with a singular mission: to simplify the complex regulatory landscape of the GCC for global food, beverage, and supplement brands.
             </p>

@@ -1,4 +1,5 @@
 'use client';
+import { motion } from 'framer-motion';
 
 export default function CoreServices() {
   const services = [
@@ -31,7 +32,13 @@ export default function CoreServices() {
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
           {services.map((srv, i) => (
-            <div key={i} style={{ 
+            <motion.div 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: i * 0.05, duration: 0.4 }}
+              key={i} 
+              style={{ 
               background: 'rgba(255, 255, 255, 0.03)', 
               padding: '1.5rem', 
               borderRadius: '8px', 
@@ -39,8 +46,8 @@ export default function CoreServices() {
               transition: 'background 0.2s',
               cursor: 'default'
             }}
-            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)'}
-            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)'}
+            onMouseEnter={(e: any) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)'}
+            onMouseLeave={(e: any) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)'}
             >
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
                 <div style={{ color: 'var(--accent-yellow)', fontSize: '1.25rem', marginTop: '-2px' }}>✦</div>
@@ -51,7 +58,7 @@ export default function CoreServices() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
