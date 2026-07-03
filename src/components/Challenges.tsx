@@ -15,7 +15,6 @@ export default function Challenges() {
             <p style={{ color: 'var(--text-dark)', fontSize: '0.95rem', marginBottom: '2rem' }}>
               RegSci Consulting can supplement your team for short- or long-term needs caused by regulatory complexity, new product launches or shifting science in the GCC.
             </p>
-            <a href="#contact" className="btn btn-yellow">Get Started Now</a>
           </div>
 
           <div style={{ background: '#fff', borderRadius: '16px', padding: '3rem', boxShadow: 'var(--shadow-sm)' }}>
@@ -27,8 +26,13 @@ export default function Challenges() {
             <p style={{ color: 'var(--text-dark)', fontSize: '0.95rem', marginBottom: '2rem' }}>
               RegSci Consulting seamlessly integrates deep scientific evaluation and clinical data review to reduce friction with authorities and avoid costly rework.
             </p>
-            <a href="#contact" className="btn btn-yellow">Find Your Expert</a>
           </div>
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: '4rem' }}>
+          <a href="#contact" className="btn btn-yellow" style={{ padding: '1rem 3rem', fontSize: '1.1rem' }}>
+            Overcome Your Regulatory Challenges Today
+          </a>
         </div>
       </div>
     </section>
