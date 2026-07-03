@@ -1,52 +1,44 @@
 'use client';
 export default function ContactForm() {
   return (
-    <section id="contact" style={{ padding: '8rem 0', borderTop: '1px solid var(--border-color)', background: 'var(--surface-color)' }}>
-      <div className="container">
-        <div className="grid grid-cols-1 grid-cols-md-2" style={{ gap: '6rem' }}>
-          
-          <div className="reveal">
-            <h2 style={{ marginBottom: '2rem' }}>Initiate a Project.</h2>
-            <p style={{ marginBottom: '3rem', fontSize: '1.1rem' }}>
-              Partner with RegSci Consulting to navigate the complex regulatory landscape of the GCC and ensure your products reach the market smoothly.
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-              <div>
-                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--secondary-color)', marginBottom: '0.5rem' }}>Location</h4>
-                <p style={{ color: 'var(--primary-color)' }}>Dubai, United Arab Emirates<br/>Serving UAE, KSA, Oman, Qatar, Kuwait, Bahrain, Iraq</p>
-              </div>
-              <div>
-                <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--secondary-color)', marginBottom: '0.5rem' }}>Direct Inquiry</h4>
-                <p style={{ color: 'var(--primary-color)' }}>info@regsciconsulting.com</p>
-              </div>
+    <section id="contact" className="bg-cyan" style={{ padding: '6rem 0' }}>
+      <div className="container" style={{ maxWidth: '800px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <h2 style={{ fontSize: '3rem', color: '#111', lineHeight: 1.1, marginBottom: '1rem' }}>Ready to support your team<br/>and meet deadlines?</h2>
+          <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>Our experts will reach out to schedule a discussion.</p>
+        </div>
+        
+        <form onSubmit={(e) => e.preventDefault()} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.5rem' }}>First Name *</label>
+              <input type="text" placeholder="Enter your first name*" style={{ width: '100%', padding: '0.875rem', borderRadius: '8px', border: '1px solid #fff', outline: 'none' }} />
+            </div>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.5rem' }}>Last Name *</label>
+              <input type="text" placeholder="Enter your last name*" style={{ width: '100%', padding: '0.875rem', borderRadius: '8px', border: '1px solid #fff', outline: 'none' }} />
             </div>
           </div>
-
-          <div className="reveal reveal-delay-1">
-            <form onSubmit={(e) => e.preventDefault()} style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <label style={{ fontFamily: 'var(--font-sans)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--secondary-color)', marginBottom: '0.5rem' }}>First Name</label>
-                  <input type="text" style={{ padding: '1rem 0', background: 'transparent', border: 'none', borderBottom: '1px solid var(--border-color)', color: 'var(--primary-color)', outline: 'none', fontSize: '1rem', transition: 'var(--transition)' }} onFocus={(e) => e.target.style.borderColor = 'var(--accent-gold)'} onBlur={(e) => e.target.style.borderColor = 'var(--border-color)'} />
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <label style={{ fontFamily: 'var(--font-sans)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--secondary-color)', marginBottom: '0.5rem' }}>Last Name</label>
-                  <input type="text" style={{ padding: '1rem 0', background: 'transparent', border: 'none', borderBottom: '1px solid var(--border-color)', color: 'var(--primary-color)', outline: 'none', fontSize: '1rem', transition: 'var(--transition)' }} onFocus={(e) => e.target.style.borderColor = 'var(--accent-gold)'} onBlur={(e) => e.target.style.borderColor = 'var(--border-color)'} />
-                </div>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <label style={{ fontFamily: 'var(--font-sans)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--secondary-color)', marginBottom: '0.5rem' }}>Email Address</label>
-                <input type="email" style={{ padding: '1rem 0', background: 'transparent', border: 'none', borderBottom: '1px solid var(--border-color)', color: 'var(--primary-color)', outline: 'none', fontSize: '1rem', transition: 'var(--transition)' }} onFocus={(e) => e.target.style.borderColor = 'var(--accent-gold)'} onBlur={(e) => e.target.style.borderColor = 'var(--border-color)'} />
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <label style={{ fontFamily: 'var(--font-sans)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--secondary-color)', marginBottom: '0.5rem' }}>Project Details</label>
-                <textarea rows={4} style={{ padding: '1rem 0', background: 'transparent', border: 'none', borderBottom: '1px solid var(--border-color)', color: 'var(--primary-color)', outline: 'none', fontSize: '1rem', resize: 'vertical', transition: 'var(--transition)' }} onFocus={(e) => e.target.style.borderColor = 'var(--accent-gold)'} onBlur={(e) => e.target.style.borderColor = 'var(--border-color)'}></textarea>
-              </div>
-              <button type="submit" className="btn btn-primary" style={{ marginTop: '1rem', alignSelf: 'flex-start' }}>Submit Inquiry</button>
-            </form>
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.5rem' }}>Email *</label>
+            <input type="email" placeholder="Enter your company email*" style={{ width: '100%', padding: '0.875rem', borderRadius: '8px', border: '1px solid #fff', outline: 'none' }} />
           </div>
-
-        </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.5rem' }}>Company *</label>
+              <input type="text" placeholder="Your company name" style={{ width: '100%', padding: '0.875rem', borderRadius: '8px', border: '1px solid #fff', outline: 'none' }} />
+            </div>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.5rem' }}>Phone</label>
+              <input type="tel" placeholder="Phone number" style={{ width: '100%', padding: '0.875rem', borderRadius: '8px', border: '1px solid #fff', outline: 'none' }} />
+            </div>
+          </div>
+          <div>
+            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.5rem' }}>Write us a message *</label>
+            <textarea rows={5} placeholder="Type your message here..." style={{ width: '100%', padding: '0.875rem', borderRadius: '8px', border: '1px solid #fff', outline: 'none', resize: 'vertical' }}></textarea>
+          </div>
+          <button type="submit" className="btn btn-yellow" style={{ width: '100%', padding: '1rem', fontSize: '1.1rem', marginTop: '1rem' }}>Contact Us</button>
+        </form>
       </div>
     </section>
   );

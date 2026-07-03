@@ -2,44 +2,32 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section style={{ paddingTop: '12rem', paddingBottom: '6rem', minHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
-      <div className="container" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-        <div className="grid grid-cols-1 grid-cols-md-2" style={{ gap: '4rem', alignItems: 'flex-start' }}>
-          
-          <div className="reveal">
-            <h4 style={{ fontFamily: 'var(--font-sans)', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.85rem', color: 'var(--accent-gold)', marginBottom: '2rem' }}>
-              GCC & Middle East
-            </h4>
-            <h1 style={{ marginBottom: '2.5rem', maxWidth: '800px' }}>
-              Turning Regulatory Complexity Into Market Access.
-            </h1>
-            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-              <Link href="#expertise" className="btn btn-primary">
-                View Expertise
-              </Link>
-              <Link href="#contact" className="btn btn-outline">
-                Book Consultation
-              </Link>
-            </div>
+    <section className="bg-blue wave-bg" style={{ padding: '6rem 0', position: 'relative', overflow: 'hidden' }}>
+      <div className="container" style={{ display: 'flex', position: 'relative', zIndex: 1 }}>
+        <div style={{ flex: 1, paddingRight: '2rem', paddingBottom: '4rem' }}>
+          <div style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem', color: 'rgba(255,255,255,0.8)' }}>
+            Home &gt; Consulting
           </div>
-
-          <div className="reveal reveal-delay-1" style={{ paddingTop: '2.5rem', display: 'flex', flexDirection: 'column', gap: '2rem', borderLeft: '1px solid var(--border-color)', paddingLeft: '3rem' }}>
-            <p style={{ fontSize: '1.25rem', color: 'var(--primary-color)' }}>
-              We provide authoritative technical consultancy for Food Supplements, FSMP, and FSDU. Our precision ensures your products meet strict compliance standards seamlessly.
-            </p>
-            <div className="divider"></div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-              <div>
-                <span style={{ display: 'block', fontSize: '2.5rem', fontFamily: 'var(--font-serif)', color: 'var(--accent-gold)', lineHeight: 1 }}>07</span>
-                <span style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--secondary-color)', marginTop: '0.5rem', display: 'block' }}>Key Markets</span>
-              </div>
-              <div>
-                <span style={{ display: 'block', fontSize: '2.5rem', fontFamily: 'var(--font-serif)', color: 'var(--accent-gold)', lineHeight: 1 }}>14+</span>
-                <span style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--secondary-color)', marginTop: '0.5rem', display: 'block' }}>Service Areas</span>
-              </div>
-            </div>
-          </div>
-          
+          <h1 style={{ fontSize: '3.5rem', lineHeight: 1.1, marginBottom: '1.5rem', maxWidth: '600px' }}>
+            Consulting for the Food, Beverage & Supplement Industries
+          </h1>
+          <h3 style={{ fontSize: '1.5rem', fontFamily: 'var(--font-sans)', fontWeight: 700, marginBottom: '1.5rem', maxWidth: '600px' }}>
+            Global industry experts in Regulatory & Scientific Affairs and Market Access
+          </h3>
+          <p style={{ fontSize: '1.1rem', marginBottom: '2.5rem', maxWidth: '500px', color: 'rgba(255,255,255,0.9)' }}>
+            Expertise when your team needs added capacity, deeper technical guidance or structured support to reduce risk and keep critical work moving.
+          </p>
+          <Link href="#contact" className="btn btn-yellow" style={{ fontSize: '1.1rem', padding: '0.875rem 2rem' }}>
+            Get Started Now
+          </Link>
+        </div>
+        <div className="hero-image-wrapper">
+          <div style={{ 
+            position: 'absolute', right: '-10%', top: '-20%', width: '120%', height: '140%', 
+            background: 'url("https://images.unsplash.com/photo-1556761175-5973dc0f32d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80") center/cover',
+            borderBottomLeftRadius: '50%', borderTopLeftRadius: '50%',
+            boxShadow: '-10px 0 30px rgba(0,0,0,0.2)'
+          }}></div>
         </div>
       </div>
     </section>

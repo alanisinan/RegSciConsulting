@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Cormorant_Garamond } from 'next/font/google';
+import { Inter, Merriweather } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -9,15 +9,15 @@ const inter = Inter({
   variable: '--font-sans',
 });
 
-const cormorant = Cormorant_Garamond({
-  weight: ['400', '500', '600', '700'],
+const merriweather = Merriweather({
+  weight: ['300', '400', '700', '900'],
   subsets: ['latin'],
   variable: '--font-serif',
 });
 
 export const metadata: Metadata = {
-  title: 'RegSci Consulting | Regulatory & Scientific Affairs Middle East',
-  description: 'Regulatory and Technical Consultancy for Food Supplements, FSMP, and FSDU across the GCC and Middle East. From product concept and formulation assessment to registration dossiers and market access.',
+  title: 'RegSci Consulting | Regulatory & Scientific Affairs',
+  description: 'Global industry experts in Regulatory & Scientific Affairs for the Food, Beverage & Supplement Industries.',
 };
 
 export default function RootLayout({
@@ -27,9 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${cormorant.variable}`}>
+      <body className={`${inter.variable} ${merriweather.variable}`}>
         <Navbar />
-        <main>{children}</main>
+        <main style={{ paddingTop: '70px' }}>{children}</main>
         <Footer />
       </body>
     </html>
