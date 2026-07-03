@@ -2,19 +2,18 @@
 
 export default function CoreServices() {
   const services = [
-    { title: 'Formula Assessment', desc: 'Ingredient compliance, novel ingredients, additives, and safety reviews.' },
+    { title: 'Formula & Claims Assessment', desc: 'Ingredient compliance, novel foods, safety, and claim substantiation.' },
     { title: 'Product Development', desc: 'R&D collaboration, stability reviews, and regulatory-friendly formulation.' },
     { title: 'Label & Artwork', desc: 'Nutrition facts, allergen declarations, and Arabic labeling compliance.' },
-    { title: 'Claims Review', desc: 'Substantiation for nutrition, health, and disease-risk reduction claims.' },
     { title: 'FSMP Classification', desc: 'Intended use evaluation and clinical evidence review for medical foods.' },
     { title: 'Technical Documentation', desc: 'Finished product specifications, certificates, and stability summaries.' },
     { title: 'Regulatory Dossiers', desc: 'Complete compilation of submission-ready files and gap analyses.' },
     { title: 'Submission Support', desc: 'End-to-end registration across UAE, KSA, Bahrain, Kuwait, Qatar, Oman, and Iraq.' },
     { title: 'Compliance Audits', desc: 'Portfolio reviews, market surveillance, and corrective action plans.' },
-    { title: 'Training', desc: 'Workshops on GCC supplement regulations, labeling, and dossiers.' },
-    { title: 'Market Entry', desc: 'Regulatory roadmaps, registration timelines, and cost estimation.' },
-    { title: 'Scientific Review', desc: 'Deep literature reviews, monographs, and benefit-risk assessments.' },
-    { title: 'Regulatory Intelligence', desc: 'Monthly updates, compliance alerts, and product impact assessments.' }
+    { title: 'Market Entry Strategy', desc: 'Regulatory roadmaps, registration timelines, and cost estimation.' },
+    { title: 'Scientific & Medical Review', desc: 'Deep literature reviews, monographs, and benefit-risk assessments.' },
+    { title: 'Regulatory Intelligence', desc: 'Monthly updates, compliance alerts, and product impact assessments.' },
+    { title: 'Corporate Training', desc: 'Custom workshops on GCC supplement regulations, labeling, and dossiers.' }
   ];
 
   return (
