@@ -15,7 +15,7 @@ export default function CoreServices() {
             <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)', marginBottom: '1.5rem' }}>
               On-demand scientific and regulatory affairs consulting to meet evolving business needs. Product concept and feasibility across GCC.
             </p>
-            <a href="#contact" style={{ color: 'var(--accent-yellow)', textDecoration: 'underline', fontSize: '0.9rem', fontWeight: 600 }}>Learn More</a>
+            <a href="#contact" style={{ color: 'var(--accent-yellow)', textDecoration: 'underline', fontSize: '0.9rem', fontWeight: 600 }}>Talk to an Expert</a>
           </div>
 
           <div style={{ background: 'var(--primary-blue-dark)', padding: '2.5rem', borderRadius: '8px', color: '#fff' }}>
@@ -24,7 +24,7 @@ export default function CoreServices() {
             <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)', marginBottom: '1.5rem' }}>
               Expert support across novel foods, formulation, clinical studies, FSMP classification, and technical dossiers.
             </p>
-            <a href="#contact" style={{ color: 'var(--accent-yellow)', textDecoration: 'underline', fontSize: '0.9rem', fontWeight: 600 }}>Learn More</a>
+            <a href="#contact" style={{ color: 'var(--accent-yellow)', textDecoration: 'underline', fontSize: '0.9rem', fontWeight: 600 }}>Talk to an Expert</a>
           </div>
 
           <div style={{ background: 'var(--primary-blue-dark)', padding: '2.5rem', borderRadius: '8px', color: '#fff' }}>
@@ -33,7 +33,7 @@ export default function CoreServices() {
             <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)', marginBottom: '1.5rem' }}>
               Regulatory roadmap, registration timelines, existing product review, and corrective action plans for the Middle East.
             </p>
-            <a href="#contact" style={{ color: 'var(--accent-yellow)', textDecoration: 'underline', fontSize: '0.9rem', fontWeight: 600 }}>Learn More</a>
+            <a href="#contact" style={{ color: 'var(--accent-yellow)', textDecoration: 'underline', fontSize: '0.9rem', fontWeight: 600 }}>Talk to an Expert</a>
           </div>
 
         </div>
