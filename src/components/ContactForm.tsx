@@ -7,7 +7,7 @@ export default function ContactForm() {
       <div className="container" style={{ maxWidth: '800px', position: 'relative', zIndex: 10 }}>
 
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 style={{ fontSize: '3.5rem', color: 'var(--primary-blue-dark)', lineHeight: 1.1, marginBottom: '1.5rem', fontFamily: 'var(--font-serif)' }}>Ready to overcome your regulatory hurdles?</h2>
+          <h2 style={{ fontSize: 'clamp(2.1rem, 7vw, 3.5rem)', color: 'var(--primary-blue-dark)', lineHeight: 1.1, marginBottom: '1.5rem', fontFamily: 'var(--font-serif)' }}>Ready to overcome your regulatory hurdles?</h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>Speak with our senior scientists and regulatory experts to build your compliance roadmap today.</p>
         </div>
 

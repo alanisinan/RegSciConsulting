@@ -29,7 +29,7 @@ export default function GapTimeline() {
     <section id="gap-analysis" style={{ padding: '8rem 0', background: 'var(--bg-cyan-light)' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-          <h2 style={{ fontSize: '3rem', color: 'var(--primary-blue-dark)', marginBottom: '1.5rem', maxWidth: '800px', margin: '0 auto 1.5rem auto' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', color: 'var(--primary-blue-dark)', marginBottom: '1.5rem', maxWidth: '800px', margin: '0 auto 1.5rem auto' }}>
             The Path to GCC Market Access
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>

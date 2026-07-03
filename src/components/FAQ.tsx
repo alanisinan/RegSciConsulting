@@ -29,7 +29,7 @@ export default function FAQ() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             style={{ flex: '1 1 350px', position: 'sticky', top: '120px' }}>
              <h4 style={{ color: 'var(--primary-blue)', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.85rem', marginBottom: '1rem', fontWeight: 700 }}>Got Questions?</h4>
-             <h2 style={{ fontSize: '3rem', color: 'var(--primary-blue-dark)', marginBottom: '1.5rem', fontFamily: 'var(--font-serif)', lineHeight: 1.1 }}>
+             <h2 style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', color: 'var(--primary-blue-dark)', marginBottom: '1.5rem', fontFamily: 'var(--font-serif)', lineHeight: 1.1 }}>
                Frequently Asked Questions
              </h2>
              <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '2.5rem' }}>

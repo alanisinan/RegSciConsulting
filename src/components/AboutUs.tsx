@@ -5,7 +5,7 @@ export default function AboutUs() {
   return (
     <section id="about" style={{ padding: '8rem 0', background: '#fff' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '5rem', alignItems: 'center' }}>
 
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -14,7 +14,7 @@ export default function AboutUs() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <h4 style={{ color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', fontSize: '0.85rem', marginBottom: '1rem' }}>About Us</h4>
-            <h2 style={{ fontSize: '3rem', color: 'var(--primary-blue-dark)', marginBottom: '2rem', lineHeight: 1.2, fontFamily: 'var(--font-serif)' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', color: 'var(--primary-blue-dark)', marginBottom: '2rem', lineHeight: 1.2, fontFamily: 'var(--font-serif)' }}>
               Bridging global innovation with Middle East compliance.
             </h2>
             <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '1.5rem', lineHeight: 1.6 }}>

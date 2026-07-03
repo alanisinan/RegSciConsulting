@@ -22,7 +22,7 @@ export default function CoreServices() {
       <div className="container">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem', flexWrap: 'wrap', gap: '2rem' }}>
           <div>
-            <h2 style={{ fontSize: '3rem', color: '#fff', marginBottom: '1rem', fontFamily: 'var(--font-serif)' }}>Help When You Need It</h2>
+            <h2 style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', color: '#fff', marginBottom: '1rem', fontFamily: 'var(--font-serif)' }}>Help When You Need It</h2>
             <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.1rem', maxWidth: '600px' }}>
               We provide highly specialized scientific and regulatory support tailored for the Middle East market.
             </p>

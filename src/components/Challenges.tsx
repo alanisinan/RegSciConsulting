@@ -17,9 +17,9 @@ export default function Challenges() {
     <section style={{ padding: '6rem 0', background: '#fff' }}>
       <div className="container">
         <p style={{ color: 'var(--text-muted)', marginBottom: '0.5rem', fontFamily: 'var(--font-sans)' }}>We understand the food and supplement industries.</p>
-        <h2 style={{ fontSize: '3rem', maxWidth: '800px', marginBottom: '4rem', color: '#111' }}>Your Work Capacity and Expertise Challenges Solved</h2>
+        <h2 style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', maxWidth: '800px', marginBottom: '4rem', color: '#111' }}>Your Work Capacity and Expertise Challenges Solved</h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
           {cards.map((card, i) => (
             <motion.div
               key={i}
