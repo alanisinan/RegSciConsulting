@@ -16,27 +16,79 @@ export default function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section id="faq" style={{ padding: '6rem 0', background: '#fff' }}>
-      <div className="container" style={{ maxWidth: '900px' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '3rem', marginBottom: '3rem', color: '#111' }}>FAQs</h2>
-        <div style={{ borderTop: '1px solid var(--border-color)' }}>
-          {faqs.map((faq, i) => (
-            <div key={i} style={{ borderBottom: '1px solid var(--border-color)' }}>
-              <button 
-                onClick={() => setOpenIdx(openIdx === i ? null : i)}
-                style={{ width: '100%', padding: '1.5rem 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'transparent', border: 'none', cursor: 'pointer', textAlign: 'left', fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: '1.05rem', color: 'var(--text-dark)' }}
-              >
-                {faq.q}
-                <span style={{ color: '#ccc' }}>{openIdx === i ? '−' : '›'}</span>
-              </button>
-              {openIdx === i && (
-                <div style={{ paddingBottom: '1.5rem', color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-                  {faq.a}
+    <section id="faq" style={{ padding: '8rem 0', background: 'var(--bg-cyan-light)' }}>
+      <div className="container">
+        
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'flex-start' }}>
+          
+          <div style={{ flex: '1 1 350px', position: 'sticky', top: '120px' }}>
+             <h4 style={{ color: 'var(--primary-blue)', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.85rem', marginBottom: '1rem', fontWeight: 700 }}>Got Questions?</h4>
+             <h2 style={{ fontSize: '3rem', color: 'var(--primary-blue-dark)', marginBottom: '1.5rem', fontFamily: 'var(--font-serif)', lineHeight: 1.1 }}>
+               Frequently Asked Questions
+             </h2>
+             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '2.5rem' }}>
+               Everything you need to know about working with RegSci Consulting and navigating the GCC regulatory landscape.
+             </p>
+             <a href="#contact" style={{ 
+               display: 'inline-block', padding: '1rem 2rem', border: '2px solid var(--primary-blue)', 
+               color: 'var(--primary-blue)', fontWeight: 600, borderRadius: '8px', textDecoration: 'none',
+               transition: 'background 0.2s',
+             }}>
+               Ask a Custom Question
+             </a>
+          </div>
+
+          <div style={{ flex: '2 1 500px', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {faqs.map((faq, i) => {
+              const isOpen = openIdx === i;
+              return (
+                <div key={i} style={{ 
+                  background: '#fff', 
+                  borderRadius: '16px', 
+                  boxShadow: isOpen ? 'var(--shadow-md)' : 'var(--shadow-sm)', 
+                  border: isOpen ? '1px solid var(--primary-blue)' : '1px solid transparent',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease'
+                }}>
+                  <button 
+                    onClick={() => setOpenIdx(isOpen ? null : i)}
+                    style={{ 
+                      width: '100%', padding: '1.5rem 2rem', 
+                      display: 'flex', justifyContent: 'space-between', alignItems: 'center', 
+                      background: 'transparent', border: 'none', cursor: 'pointer', textAlign: 'left', 
+                      fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: '1.1rem', 
+                      color: isOpen ? 'var(--primary-blue)' : 'var(--primary-blue-dark)' 
+                    }}
+                  >
+                    <span style={{ paddingRight: '2rem', lineHeight: 1.4 }}>{faq.q}</span>
+                    <span style={{ 
+                      display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                      width: '36px', height: '36px', borderRadius: '50%',
+                      background: isOpen ? 'var(--primary-blue)' : 'var(--bg-cyan-light)',
+                      color: isOpen ? '#fff' : 'var(--primary-blue)',
+                      fontSize: '1.5rem', lineHeight: 1,
+                      transform: isOpen ? 'rotate(45deg)' : 'none',
+                      transition: 'transform 0.3s ease, background 0.3s ease'
+                    }}>+</span>
+                  </button>
+                  
+                  <div style={{ 
+                    maxHeight: isOpen ? '500px' : '0', 
+                    opacity: isOpen ? 1 : 0,
+                    transition: 'all 0.3s ease',
+                    padding: isOpen ? '0 2rem 1.5rem 2rem' : '0 2rem'
+                  }}>
+                    <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.6 }}>
+                      {faq.a}
+                    </p>
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
+              );
+            })}
+          </div>
+
         </div>
+        
       </div>
     </section>
   );
