@@ -13,7 +13,7 @@ export default function Challenges() {
             </h3>
             <h4 style={{ color: 'var(--text-muted)', fontSize: '0.9rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Solution</h4>
             <p style={{ color: 'var(--text-dark)', fontSize: '0.95rem', marginBottom: '2rem' }}>
-              RegSci Consulting staff can supplement your team for short- or long-term needs caused by regulatory complexity, new product launches or shifting science in the GCC.
+              RegSci Consulting can supplement your team for short- or long-term needs caused by regulatory complexity, new product launches or shifting science in the GCC.
             </p>
             <a href="#contact" className="btn btn-yellow">Get Started Now</a>
           </div>
