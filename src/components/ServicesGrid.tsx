@@ -1,3 +1,5 @@
+'use client';
+
 const services = [
   { title: 'Product Concept & Feasibility', desc: 'Regulatory classification, target market assessment, and gap analysis against GCC regulations.' },
   { title: 'Formula Assessment', desc: 'Review formulations for ingredient compliance, safety, novel ingredients, and permitted vitamins.' },
@@ -17,25 +19,48 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section id="services" style={{ padding: '6rem 0' }}>
+    <section id="expertise" style={{ padding: '8rem 0', borderTop: '1px solid var(--border-color)' }}>
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 className="text-gradient" style={{ display: 'inline-block' }}>Our Expertise</h2>
-          <p style={{ maxWidth: '600px', margin: '1rem auto', fontSize: '1.1rem' }}>
+        
+        <div className="reveal" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '4rem', flexWrap: 'wrap', gap: '2rem' }}>
+          <h2 style={{ margin: 0, maxWidth: '600px' }}>Our Expertise</h2>
+          <p style={{ maxWidth: '400px', margin: 0 }}>
             Comprehensive regulatory and technical consultancy tailored for the Middle East market.
           </p>
         </div>
-        <div className="grid grid-cols-1 grid-cols-md-2 grid-cols-lg-3" style={{ gap: '1.5rem' }}>
-          {services.map((service, idx) => (
-            <div key={idx} className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <div style={{ width: 48, height: 48, background: 'rgba(16,185,129,0.1)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', color: 'var(--accent-color)' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        
+        <div className="divider" style={{ marginBottom: '0' }}></div>
+
+        <div className="grid grid-cols-1 grid-cols-md-2" style={{ gap: '0' }}>
+          {services.map((service, idx) => {
+            const num = (idx + 1).toString().padStart(2, '0');
+            const isRightColumn = idx % 2 !== 0;
+            const isBottomRow = idx >= services.length - 2;
+
+            return (
+              <div 
+                key={idx} 
+                className="reveal"
+                style={{ 
+                  padding: '3rem', 
+                  borderRight: isRightColumn ? 'none' : '1px solid var(--border-color)',
+                  borderBottom: isBottomRow ? 'none' : '1px solid var(--border-color)',
+                  position: 'relative',
+                  transition: 'var(--transition)'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--surface-color)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
+                  <h3 style={{ fontSize: '1.5rem', maxWidth: '80%' }}>{service.title}</h3>
+                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.85rem', color: 'var(--accent-gold)' }}>{num}</span>
+                </div>
+                <p style={{ fontSize: '0.95rem', margin: 0 }}>{service.desc}</p>
               </div>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>{service.title}</h3>
-              <p style={{ fontSize: '0.95rem', marginBottom: 0, flex: 1 }}>{service.desc}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
+
       </div>
     </section>
   );
