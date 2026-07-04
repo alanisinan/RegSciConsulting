@@ -13,11 +13,28 @@ const faqs = [
   { q: 'How do regulatory consulting services help manage post-market compliance?', a: 'We provide ongoing regulatory intelligence, market surveillance reviews, portfolio compliance audits, and custom training workshops for your team.' }
 ];
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
+
 export default function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
     <section id="faq" style={{ padding: '8rem 0 5rem', background: 'var(--bg-cyan-light)' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="container">
         
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'flex-start' }}>
