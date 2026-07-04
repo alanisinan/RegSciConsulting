@@ -1,5 +1,5 @@
 'use client';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 const cards = [
   {
@@ -13,6 +13,7 @@ const cards = [
 ];
 
 export default function Challenges() {
+  const reduce = useReducedMotion();
   return (
     <section style={{ padding: '6rem 0', background: '#fff' }}>
       <div className="container">
@@ -23,7 +24,7 @@ export default function Challenges() {
           {cards.map((card, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={reduce ? false : { opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: i * 0.1, duration: 0.5 }}

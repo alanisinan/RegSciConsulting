@@ -1,15 +1,22 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    setScrolled(latest > 24);
+  });
 
   return (
-    <nav style={{ position: 'fixed', top: 0, width: '100%', background: '#fff', zIndex: 1000, boxShadow: '0 2px 4px rgba(0,0,0,0.05)', padding: '0.75rem 0' }}>
+    <nav style={{ position: 'fixed', top: 0, width: '100%', background: '#fff', zIndex: 1000, boxShadow: scrolled ? '0 8px 20px -6px rgba(0,71,143,0.18)' : '0 2px 4px rgba(0,0,0,0.05)', padding: scrolled ? '0.5rem 0' : '0.75rem 0', transition: 'padding 0.3s ease, box-shadow 0.3s ease' }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary-blue)', textDecoration: 'none', minWidth: 0 }}>
-          <img src="/logo.png" alt="RegSci Consulting Logo" style={{ height: '56px', objectFit: 'contain', flexShrink: 0 }} />
+          <img src="/logo.png" alt="RegSci Consulting Logo" style={{ height: scrolled ? '44px' : '56px', objectFit: 'contain', flexShrink: 0, transition: 'height 0.3s ease' }} />
           <div className="navbar-tagline" style={{ height: '36px', width: '1px', background: 'var(--border-color)', margin: '0 0.75rem', flexShrink: 0 }}></div>
           <div className="navbar-tagline" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary-blue-dark)', textTransform: 'uppercase', letterSpacing: '1px', lineHeight: 1.4, whiteSpace: 'nowrap' }}>

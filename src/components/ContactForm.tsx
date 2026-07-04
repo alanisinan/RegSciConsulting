@@ -1,7 +1,8 @@
 'use client';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 export default function ContactForm() {
+  const reduce = useReducedMotion();
   return (
     <section id="contact" style={{ padding: '5rem 0 8rem', background: 'var(--bg-cyan-light)', position: 'relative', borderTop: '1px solid rgba(0,71,143,0.1)' }}>
       <div className="container" style={{ maxWidth: '800px', position: 'relative', zIndex: 10 }}>
@@ -18,7 +19,7 @@ export default function ContactForm() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={reduce ? false : { opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}

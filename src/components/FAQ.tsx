@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 const faqs = [
   { q: 'What is important when a food or supplement company is looking for outside consulting expertise?', a: 'Finding a partner with deep regional knowledge of the GCC (UAE, Saudi Arabia, Oman, etc.) and specific technical experience in your product category.' },
@@ -28,6 +28,7 @@ const faqJsonLd = {
 
 export default function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const reduce = useReducedMotion();
 
   return (
     <section id="faq" style={{ padding: '8rem 0 5rem', background: 'var(--bg-cyan-light)' }}>
@@ -40,7 +41,7 @@ export default function FAQ() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'flex-start' }}>
           
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
+            initial={reduce ? false : { opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -67,7 +68,7 @@ export default function FAQ() {
               return (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 16 }}
+                  initial={reduce ? false : { opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ delay: Math.min(i * 0.04, 0.3), duration: 0.4 }}

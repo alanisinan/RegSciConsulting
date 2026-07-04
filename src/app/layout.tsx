@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
-import { Inter, Merriweather } from 'next/font/google';
+import { Outfit, Merriweather } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ScrollProgress from '@/components/ScrollProgress';
 
-const inter = Inter({ 
+const outfit = Outfit({
   subsets: ['latin'],
   variable: '--font-sans',
 });
@@ -72,11 +73,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${merriweather.variable}`} suppressHydrationWarning>
+      <body className={`${outfit.variable} ${merriweather.variable}`} suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <ScrollProgress />
         <Navbar />
         <main style={{ paddingTop: '70px' }}>{children}</main>
         <Footer />

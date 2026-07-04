@@ -1,7 +1,8 @@
 'use client';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 export default function GapTimeline() {
+  const reduce = useReducedMotion();
   const steps = [
     { 
       title: 'Concept & Feasibility', 
@@ -26,8 +27,14 @@ export default function GapTimeline() {
   ];
 
   return (
-    <section id="gap-analysis" style={{ padding: '8rem 0', background: 'var(--bg-cyan-light)' }}>
-      <div className="container">
+    <section id="gap-analysis" style={{ padding: '8rem 0', background: '#fff', position: 'relative', overflow: 'hidden' }}>
+      <div style={{
+        position: 'absolute', top: '10%', right: '-10%',
+        width: '700px', height: '700px', borderRadius: '50%',
+        background: 'radial-gradient(circle, var(--bg-cyan) 0%, rgba(208,244,247,0) 70%)',
+        opacity: 0.6, pointerEvents: 'none'
+      }} />
+      <div className="container" style={{ position: 'relative' }}>
         <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
           <h2 style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', color: 'var(--primary-blue-dark)', marginBottom: '1.5rem', maxWidth: '800px', margin: '0 auto 1.5rem auto' }}>
             The Path to GCC Market Access
@@ -39,8 +46,8 @@ export default function GapTimeline() {
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', alignItems: 'start' }}>
           {steps.map((s, i) => (
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
+            <motion.div
+              initial={reduce ? false : { opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
@@ -58,15 +65,20 @@ export default function GapTimeline() {
             onMouseEnter={(e: any) => e.currentTarget.style.transform = 'translateY(-5px)'}
             onMouseLeave={(e: any) => e.currentTarget.style.transform = 'translateY(0)'}
             >
-              <div style={{ 
-                width: '40px', height: '40px', 
-                background: 'var(--primary-blue)', color: '#fff', 
+              <motion.div
+                initial={reduce ? false : { scale: 0.4, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ delay: i * 0.1 + 0.15, type: 'spring', stiffness: 260, damping: 18 }}
+                style={{
+                width: '40px', height: '40px',
+                background: 'var(--primary-blue)', color: '#fff',
                 borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontWeight: 'bold', fontSize: '1.25rem', marginBottom: '1.5rem',
                 fontFamily: 'var(--font-serif)'
               }}>
                 {i + 1}
-              </div>
+              </motion.div>
               <h4 style={{ color: 'var(--primary-blue-dark)', fontSize: '1.1rem', fontFamily: 'var(--font-sans)', fontWeight: 700, marginBottom: '1rem' }}>
                 {s.title}
               </h4>
