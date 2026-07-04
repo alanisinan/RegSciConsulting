@@ -17,7 +17,7 @@ export default function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section id="faq" style={{ padding: '8rem 0', background: 'var(--bg-cyan-light)' }}>
+    <section id="faq" style={{ padding: '8rem 0 5rem', background: 'var(--bg-cyan-light)' }}>
       <div className="container">
         
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'flex-start' }}>

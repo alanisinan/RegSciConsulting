@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function ContactForm() {
   return (
-    <section id="contact" style={{ padding: '8rem 0', background: 'var(--bg-cyan-light)', position: 'relative' }}>
+    <section id="contact" style={{ padding: '5rem 0 8rem', background: 'var(--bg-cyan-light)', position: 'relative', borderTop: '1px solid rgba(0,71,143,0.1)' }}>
       <div className="container" style={{ maxWidth: '800px', position: 'relative', zIndex: 10 }}>
 
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
